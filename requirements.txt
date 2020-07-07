@@ -1,0 +1,5 @@
+Django==2.2.13
+djangorestframework==3.11.0
+djangorestframework-simplejwt==4.4.0
+# psycopg2>=2.7.5,<2.8.0
+flake8==3.8.3
