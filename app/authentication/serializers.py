@@ -15,7 +15,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         username = attrs.get('username', '')
         if not username.isalnum():
             raise serializers.ValidationError(
-                'Nome de usuário deve ter apenas caracteres alfenuméricos')
+                'Nome de usuário deve ter apenas caracteres alfanuméricos')
         return attrs
 
     def create(self, validated_data):
