@@ -1,14 +1,36 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication, permissions
+from rest_framework import (
+    authentication,
+    permissions, 
+    status, 
+    filters, 
+    generics,
+)
 from .models import Log
 from .serializers import LogSerializer
 from django.shortcuts import get_object_or_404
-from rest_framework import status
 
 
-# Create your views here.
+class SearchLogsView(generics.ListCreateAPIView):
+    """
+    Pesquisa logs pelos campos 'description' e 'details'
+    usando o parâmetro '/?search='
+
+    * É preciso estar autenticado para pesquisar
+    """
+
+    permission_classes = [permissions.IsAuthenticated]
+
+    search_fields = ['description', 'details']
+    filter_backends = (filters.SearchFilter,)
+    queryset = Log.objects.all()
+    serializer_class = LogSerializer
+
+
 class ListLogsView(APIView):
+
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         """
@@ -34,6 +56,8 @@ class ListLogsView(APIView):
 
 
 class DetailLogView(APIView):
+
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk):
         """

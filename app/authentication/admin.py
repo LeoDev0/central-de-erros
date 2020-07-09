@@ -9,5 +9,4 @@ class UserAdmin(admin.ModelAdmin):
         'is_superuser',
     ]
 
-# Register your models here.
 admin.site.register(User, UserAdmin)

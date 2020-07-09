@@ -13,5 +13,4 @@ class LogAdmin(admin.ModelAdmin):
         'archived',
     ]
 
-# Register your models here.
 admin.site.register(Log, LogAdmin)
