@@ -19,7 +19,6 @@ class SearchLogsView(generics.ListCreateAPIView):
 
     * É preciso estar autenticado para pesquisar
     """
-
     permission_classes = [permissions.IsAuthenticated]
 
     search_fields = ['description', 'details']
@@ -55,7 +54,7 @@ class ListLogsView(APIView):
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-class DetailLogView(APIView):
+class SingleLogView(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
 
