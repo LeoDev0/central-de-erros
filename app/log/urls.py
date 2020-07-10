@@ -3,6 +3,7 @@ from log import views
 
 
 urlpatterns = [
+    # rotas protegidas somente para usuários com conta visualizarem
     path('logs/', views.SearchLogsView.as_view(), name='search_logs'),
     path('logs/', views.ListLogsView.as_view(), name='all_logs'),
     path('logs/<int:pk>', views.SingleLogView.as_view(), name='single_log'),
