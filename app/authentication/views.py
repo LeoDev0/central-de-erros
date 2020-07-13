@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 
 
 class RegisterView(generics.GenericAPIView):
-    """Registro de novo usuário"""
+    """Criação de novo usuário"""
     serializer_class = RegisterSerializer
 
     def post(self, request):
