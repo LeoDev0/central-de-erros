@@ -2,6 +2,8 @@ from django.urls import path
 from log import views
 
 
+app_name = 'log'
+
 urlpatterns = [
     # rotas protegidas somente para usuários com conta visualizarem
     path('logs/results', views.SearchLogsView.as_view(), name='search_logs'),

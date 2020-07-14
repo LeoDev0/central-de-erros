@@ -3,6 +3,8 @@ from authentication import views
 from .custom_token_response import MyTokenObtainPairView, MyTokenRefreshView
 
 
+app_name = 'authentication'
+
 urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='register'),
 

@@ -27,7 +27,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class MyTokenObtainPairView(TokenObtainPairView):
     """
-    Requisitar tokens de acesso e refresh, além dos dados cadastrais
+    Requisita os tokens de acesso e refresh, além dos dados cadastrais
 
     * É preciso já ser registrado como usuário
     """
@@ -36,7 +36,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 class MyTokenRefreshView(TokenRefreshView):
     """
-    Atualização do token de acesso do usuário
+    Atualiza token de acesso do usuário
 
     * Pega o token de refresh e retorna um novo token
     de acesso se o primeiro for válido

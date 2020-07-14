@@ -10,9 +10,9 @@ from drf_yasg.utils import swagger_auto_schema
 
 class RegisterView(generics.GenericAPIView):
     """
-    Criação de novo usuário
-
-    * Cria novo usuário
+    Cria novo usuário
+    
+    * Criação de novo usuário
     """
     serializer_class = RegisterSerializer
 
