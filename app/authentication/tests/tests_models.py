@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import status
 
 
-class ModelTests(TestCase):
+class AuthenticationModelTests(TestCase):
 
     def test_create_user_with_email_succesfully(self):
         """Teste para criar novo usuário com o user model

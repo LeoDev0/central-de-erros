@@ -13,7 +13,7 @@ def SINGLE_USER_URL(user_id):
     return reverse('authentication:single_user', args=[user_id])
 
 
-class UserTests(TestCase):
+class UserApiTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
