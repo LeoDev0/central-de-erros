@@ -4,7 +4,11 @@ from .models import User
 
 class RegisterSerializer(serializers.ModelSerializer):
     """Serializer para o objecto de registro"""
-    password = serializers.CharField(max_length=72, min_length=8, write_only=True)
+    password = serializers.CharField(
+        max_length=72,
+        min_length=8,
+        write_only=True
+    )
 
     class Meta:
         model = User

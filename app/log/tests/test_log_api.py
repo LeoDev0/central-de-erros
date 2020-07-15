@@ -214,7 +214,3 @@ class LogApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertIn('microservice', res.data[0]['description'])
         self.assertIn('microservice', res.data[0]['details'])
-        # self.assertIn('microservice', res.data[0]['description'])
-        # self.assertIn('microservice', res.data[0]['details'])
-        # self.client.force_authenticate(user=self.user)
-        # res = self.client.get(SEARCH_LOGS_URL, args[])

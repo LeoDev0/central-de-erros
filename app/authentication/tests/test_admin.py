@@ -9,27 +9,27 @@ class AdminSiteTests(TestCase):
     def setUp(self):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
-            username = 'admin',
-            email = 'admin@email.com',
-            password = '12345678'
+            username='admin',
+            email='admin@email.com',
+            password='12345678'
         )
         self.client.force_login(self.admin_user)
         self.user = get_user_model().objects.create_user(
-            username = 'teste',
-            email = 'teste@email.com',
-            password = '12345678'
+            username='teste',
+            email='teste@email.com',
+            password='12345678'
         )
         self.log = Log.objects.create(
-            description =  'log',
-            details = 'descricao teste',
-            level = 'DEBUG',
-            origin = '127.0.0.1',
-            events = 200,
-            archived = False
+            description='log',
+            details='descricao teste',
+            level='DEBUG',
+            origin='127.0.0.1',
+            events=200,
+            archived=False
         )
 
     def test_users_listed(self):
-        """Teste para saber se os usuário estão sendo 
+        """Teste para saber se os usuário estão sendo
         listados corretamente na página de admin"""
         url = reverse('admin:authentication_user_changelist')
         res = self.client.get(url)

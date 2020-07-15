@@ -9,6 +9,8 @@ REGISTER_URL = reverse('authentication:register')
 TOKEN_URL = reverse('authentication:token_obtain_pair')
 REFRESH_TOKEN_URL = reverse('authentication:token_refresh')
 ALL_USERS_URL = reverse('authentication:all_users')
+
+
 def SINGLE_USER_URL(user_id):
     return reverse('authentication:single_user', args=[user_id])
 
@@ -18,14 +20,14 @@ class UserApiTests(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            username = 'teste',
-            email = 'teste@email.com',
-            password = '12345678'
+            username='teste',
+            email='teste@email.com',
+            password='12345678'
         )
         self.admin = get_user_model().objects.create_superuser(
-            username = 'admin',
-            email = 'admin@email.com',
-            password = '12345678'
+            username='admin',
+            email='admin@email.com',
+            password='12345678'
         )
 
     def test_create_valid_user_succesfully(self):
@@ -50,14 +52,14 @@ class UserApiTests(TestCase):
             'password': '12345678'
         }
 
-        """Aqui vai se tentar criar outro usuário com as mesmas credenciais 
-        do 'user' criado no setUp e presentes no 'payload' acima""" 
+        """Aqui vai se tentar criar outro usuário com as mesmas credenciais
+        do 'user' criado no setUp e presentes no 'payload' acima"""
         res = self.client.post(REGISTER_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_password_length_validation(self):
-        """Testa se o usuário não será criado caso a 
+        """Testa se o usuário não será criado caso a
         senha seja menor que 8 caracteres"""
         payload = {
             'email': 'teste2@email.com',
@@ -68,7 +70,7 @@ class UserApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
         user_exists = get_user_model().objects.filter(
-            email = payload['email']
+            email=payload['email']
         ).exists()
         self.assertFalse(user_exists)
 
@@ -118,23 +120,20 @@ class UserApiTests(TestCase):
         self.assertNotEqual(new_access_token, old_access_token)
 
     def test_users_view_are_protected_for_non_users(self):
-        """Testa se a view de usuário está protegida 
-        contra não usuário"""
+        """Testa se a view de usuário está protegida contra não usuário"""
         res = self.client.get(ALL_USERS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_users_view_protected_for_common_users(self):
-        """Testa se a view está protegida contra 
-        usuários comuns"""
+        """Testa se a view está protegida contra usuários comuns"""
         self.client.force_authenticate(user=self.user)
         res = self.client.get(ALL_USERS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_single_user_view_protected_for_common_users(self):
-        """Testa se a view está protegida contra 
-        usuários comuns"""
+        """Testa se a view está protegida contra usuários comuns"""
         self.client.force_authenticate(user=self.user)
         res = self.client.get(SINGLE_USER_URL(self.user.id))
 

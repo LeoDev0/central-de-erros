@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from rest_framework import status
 
 
 class AuthenticationModelTests(TestCase):
@@ -22,7 +21,7 @@ class AuthenticationModelTests(TestCase):
         self.assertTrue(user.check_password(password))
 
     def test_normalize_user_email(self):
-        """Teste para saber se o email está sendo 
+        """Teste para saber se o email está sendo
         sanitizado/normalizado corretamente"""
         username = 'usuario'
         email = 'usuario@EMAIL.COM'
