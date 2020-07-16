@@ -10,7 +10,7 @@ services:
       - ./app:/app
     environment:
       - SECRET_KEY=your_secret_key
-      - DEBUG_VALUE=True
+      - DEBUG_VALUE=True  # Deixe vazio para 'False'
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
