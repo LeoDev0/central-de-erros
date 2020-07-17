@@ -74,12 +74,16 @@ Representação das tabelas do banco de dados usadas na aplicação.
 
 ### /api/logs/
 
+*É preciso estar autenticado para visualizar*
+
 `Métodos: GET, POST`
 
 - Lista todos os logs;
 - Cria novo log.
 
 ### /api/logs/results
+
+*É preciso estar autenticado para visualizar*
 
 `Método: GET`
 
@@ -104,7 +108,7 @@ Representação das tabelas do banco de dados usadas na aplicação.
 
 `Método: POST`
 
-- Requisita os tokens de acesso e refresh, além dos dados cadastrais od usuário.
+- Requisita os tokens de acesso e refresh, além dos dados cadastrais do usuário.
 
 ### /api/token/refresh/
 
@@ -114,11 +118,15 @@ Representação das tabelas do banco de dados usadas na aplicação.
 
 ### /api/users/
 
+*É preciso estar autenticado como super usuário para visualizar*
+
 `Método: GET`
 
 - Lista todos os usuários.
 
 ### /api/users/{id}
+
+*É preciso estar autenticado como super usuário para visualizar*
 
 `Método: GET`
 
