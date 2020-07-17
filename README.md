@@ -12,7 +12,7 @@ Projeto final da aceleração de Back End com Python da [Codenation](https://git
 - [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
 - [Instalação e Uso](#Instalação-e-Uso)
 - [Modelagem](#Modelagem)
-- [Overview dos Endpoints](#Overview-dos-Endpoints)
+- [Endpoints](#Endpoints)
 - [Licença](#Licença)
 
 
@@ -70,7 +70,7 @@ Representação das tabelas do banco de dados usadas na aplicação.
 
 ![models](https://raw.githubusercontent.com/LeoDev0/leodev0/master/media/codenation_models.png)
 
-## Overview dos Endpoints
+## Endpoints
 
 ### /api/logs/
 
@@ -90,6 +90,8 @@ Representação das tabelas do banco de dados usadas na aplicação.
 - Pesquisa por logs pelos campos 'description' e 'details' usando o parâmetro '?search='.
 
 ### /api/logs/{id}
+
+*É preciso estar autenticado para visualizar*
 
 `Métodos: GET, PUT, PATCH, DELETE`
 
