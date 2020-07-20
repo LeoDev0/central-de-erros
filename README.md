@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LeoDev0/central-de-erros/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/LeoDev0/central-de-erros.svg?branch=master)](https://travis-ci.org/LeoDev0/central-de-erros)
 
-Projeto final da aceleração de Back End com Python da [Codenation](https://github.com/codenation-dev) em parceria com a [Stone Payments](https://github.com/stone-payments). Se trata de uma API REST para gerenciamento e centralização de erros e você pode testá-la [aqui](https://errors-logger.herokuapp.com/) com as credenciais "admin@email.com" e senha "admin" para visualizar todos os endpoints.
+Projeto final da aceleração de Back End com Python da [Codenation](https://github.com/codenation-dev) em parceria com a [Stone Payments](https://github.com/stone-payments). Se trata de uma API REST para gerenciamento e centralização de erros e você pode testá-la [aqui](https://errors-logger.herokuapp.com/) com as credenciais `admin@email.com` e senha `admin` para visualizar todos os endpoints.
 
 
 ## Tabela de Conteúdos
